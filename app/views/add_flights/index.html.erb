@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Add Flights</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @add_flights.each do |add_flight| %>
+      <tr>
+        <td><%= link_to 'Show', add_flight %></td>
+        <td><%= link_to 'Edit', edit_add_flight_path(add_flight) %></td>
+        <td><%= link_to 'Destroy', add_flight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Add Flight', new_add_flight_path %>
