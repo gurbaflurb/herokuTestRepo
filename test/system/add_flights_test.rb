@@ -14,6 +14,10 @@ class AddFlightsTest < ApplicationSystemTestCase
     visit add_flights_url
     click_on "New Add Flight"
 
+    fill_in "Arrivaltime", with: @add_flight.arrivalTime
+    fill_in "Arriving", with: @add_flight.arriving
+    fill_in "Departing", with: @add_flight.departing
+    fill_in "Departuretime", with: @add_flight.departureTime
     click_on "Create Add flight"
 
     assert_text "Add flight was successfully created"
@@ -24,6 +28,10 @@ class AddFlightsTest < ApplicationSystemTestCase
     visit add_flights_url
     click_on "Edit", match: :first
 
+    fill_in "Arrivaltime", with: @add_flight.arrivalTime
+    fill_in "Arriving", with: @add_flight.arriving
+    fill_in "Departing", with: @add_flight.departing
+    fill_in "Departuretime", with: @add_flight.departureTime
     click_on "Update Add flight"
 
     assert_text "Add flight was successfully updated"

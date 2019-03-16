@@ -1,4 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Departing:</strong>
+  <%= @add_flight.departing %>
+</p>
+
+<p>
+  <strong>Arriving:</strong>
+  <%= @add_flight.arriving %>
+</p>
+
+<p>
+  <strong>Departuretime:</strong>
+  <%= @add_flight.departureTime %>
+</p>
+
+<p>
+  <strong>Arrivaltime:</strong>
+  <%= @add_flight.arrivalTime %>
+</p>
+
 <%= link_to 'Edit', edit_add_flight_path(@add_flight) %> |
 <%= link_to 'Back', add_flights_path %>

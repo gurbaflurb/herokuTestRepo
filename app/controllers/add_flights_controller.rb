@@ -69,6 +69,6 @@ class AddFlightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def add_flight_params
-      params.fetch(:add_flight, {})
+      params.require(:add_flight).permit(:departing, :arriving, :departureTime, :arrivalTime)
     end
 end
