@@ -1,0 +1,463 @@
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateAddFlights (20190316190728)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "add_flights" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "departing" varchar, "arriving" varchar, "departureTime" datetime, "arrivalTime" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190316190728_create_add_flights.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190316190728"]]
+  ↳ /usr/share/rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (3.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/share/rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-18 06:45:27.169021"], ["updated_at", "2019-03-18 06:45:27.169021"]]
+  ↳ /usr/share/rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/vacations" for 127.0.0.1 at 2019-03-18 00:45:38 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gurbe/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/vacations"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-03-18 00:45:41 -0600
+Started GET "/add_flights" for 127.0.0.1 at 2019-03-18 00:45:41 -0600
+Processing by AddFlightsController#index as HTML
+  Rendering add_flights/index.html.erb within layouts/application
+  [1m[36mAddFlight Load (1.2ms)[0m  [1m[34mSELECT "add_flights".* FROM "add_flights"[0m
+  ↳ app/views/add_flights/index.html.erb:17
+  Rendered add_flights/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 3932ms (Views: 3903.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/add_flights/new" for 127.0.0.1 at 2019-03-18 00:45:48 -0600
+Processing by AddFlightsController#new as HTML
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (39.6ms)
+  Rendered add_flights/new.html.erb within layouts/application (44.3ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for true:TrueClass):
+    14: 
+    15:   <div class="field">
+    16:     <%= form.label :departing %>
+    17:     <%= form.text_field :departing, required = true %>
+    18:   </div>
+    19: 
+    20:   <div class="field">
+  
+app/views/add_flights/_form.html.erb:17:in `block in _app_views_add_flights__form_html_erb___420931358320194543_70021700156900'
+app/views/add_flights/_form.html.erb:2:in `_app_views_add_flights__form_html_erb___420931358320194543_70021700156900'
+app/views/add_flights/new.html.erb:3:in `_app_views_add_flights_new_html_erb__796489594573607684_70021699994280'
+Started GET "/add_flights/new" for 127.0.0.1 at 2019-03-18 00:46:16 -0600
+Processing by AddFlightsController#new as HTML
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (113.4ms)
+  Rendered add_flights/new.html.erb within layouts/application (117.6ms)
+Completed 200 OK in 223ms (Views: 219.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/add_flights/new" for 127.0.0.1 at 2019-03-18 00:49:25 -0600
+Processing by AddFlightsController#new as HTML
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (3.3ms)
+  Rendered add_flights/new.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/gurbe/Documents/test/group1_spring2019/app/views/add_flights/_form.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+...ield :departing, input required='true' );@output_buffer.safe...
+...                       ^~~~~~~~):
+  
+app/views/add_flights/_form.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/views/add_flights/new.html.erb:3:in `_app_views_add_flights_new_html_erb__796489594573607684_70021698859160'
+Started GET "/add_flights/new" for 127.0.0.1 at 2019-03-18 00:49:39 -0600
+Processing by AddFlightsController#new as HTML
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (29.6ms)
+  Rendered add_flights/new.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 115ms (Views: 112.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/add_flights/new" for 127.0.0.1 at 2019-03-18 00:54:34 -0600
+Processing by AddFlightsController#new as HTML
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (46.5ms)
+  Rendered add_flights/new.html.erb within layouts/application (52.5ms)
+Completed 200 OK in 199ms (Views: 146.2ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/add_flights" for 127.0.0.1 at 2019-03-18 00:54:38 -0600
+Processing by AddFlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6MaJmc1P3kAWstj+mGkjJvi4ZXqP2L+R7k6Oz/zRuB8SIqBZqTNWYq2koJTUoBd7In1lhcfW6Aaq15+BWtsFww==", "add_flight"=>{"departing"=>"", "arriving"=>"", "departureTime(1i)"=>"2019", "departureTime(2i)"=>"3", "departureTime(3i)"=>"18", "departureTime(4i)"=>"06", "departureTime(5i)"=>"46", "arrivalTime(1i)"=>"2019", "arrivalTime(2i)"=>"3", "arrivalTime(3i)"=>"18", "arrivalTime(4i)"=>"06", "arrivalTime(5i)"=>"46"}, "commit"=>"Create Add flight"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (36.2ms)
+  Rendered add_flights/new.html.erb within layouts/application (40.7ms)
+Completed 200 OK in 142ms (Views: 123.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/add_flights" for 127.0.0.1 at 2019-03-18 00:55:09 -0600
+Processing by AddFlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xtt2p4fpaWraGQmMloCignTgmYR+BcUsskUoVN6x5iGkP19n45XhSGEPcebaSZbfriWZezYLkrv23DkaeLtb/Q==", "add_flight"=>{"departing"=>"Denver", "arriving"=>"Syracus", "departureTime(1i)"=>"2019", "departureTime(2i)"=>"3", "departureTime(3i)"=>"18", "departureTime(4i)"=>"06", "departureTime(5i)"=>"46", "arrivalTime(1i)"=>"2019", "arrivalTime(2i)"=>"3", "arrivalTime(3i)"=>"17", "arrivalTime(4i)"=>"06", "arrivalTime(5i)"=>"46"}, "commit"=>"Create Add flight"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  [1m[36mAddFlight Create (1.5ms)[0m  [1m[32mINSERT INTO "add_flights" ("departing", "arriving", "departureTime", "arrivalTime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["departing", "Denver"], ["arriving", "Syracus"], ["departureTime", "2019-03-18 06:46:00"], ["arrivalTime", "2019-03-17 06:46:00"], ["created_at", "2019-03-18 06:55:09.378764"], ["updated_at", "2019-03-18 06:55:09.378764"]]
+  ↳ app/controllers/add_flights_controller.rb:30
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+Redirected to http://localhost:3000/add_flights/1
+Completed 302 Found in 34ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/add_flights/1" for 127.0.0.1 at 2019-03-18 00:55:09 -0600
+Processing by AddFlightsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAddFlight Load (2.7ms)[0m  [1m[34mSELECT  "add_flights".* FROM "add_flights" WHERE "add_flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/add_flights_controller.rb:67
+  Rendering add_flights/show.html.erb within layouts/application
+  Rendered add_flights/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 224ms (Views: 171.6ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/add_flights" for 127.0.0.1 at 2019-03-18 00:55:15 -0600
+Processing by AddFlightsController#index as HTML
+  Rendering add_flights/index.html.erb within layouts/application
+  [1m[36mAddFlight Load (0.7ms)[0m  [1m[34mSELECT "add_flights".* FROM "add_flights"[0m
+  ↳ app/views/add_flights/index.html.erb:17
+  Rendered add_flights/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 103ms (Views: 97.7ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/add_flights/1" for 127.0.0.1 at 2019-03-18 00:55:18 -0600
+Processing by AddFlightsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"d5XL0/ulWpTpyyf6rIceuClZFFjQDTx+QIxvWButMJ6NceITn9nStlLdX5DgTirl85wUp5gDa+kEFX4WvaeNQg==", "id"=>"1"}
+  [1m[36mAddFlight Load (0.7ms)[0m  [1m[34mSELECT  "add_flights".* FROM "add_flights" WHERE "add_flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/add_flights_controller.rb:67
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:57
+  [1m[36mAddFlight Destroy (1.4ms)[0m  [1m[31mDELETE FROM "add_flights" WHERE "add_flights"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/add_flights_controller.rb:57
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:57
+Redirected to http://localhost:3000/add_flights
+Completed 302 Found in 27ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/add_flights" for 127.0.0.1 at 2019-03-18 00:55:18 -0600
+Processing by AddFlightsController#index as HTML
+  Rendering add_flights/index.html.erb within layouts/application
+  [1m[36mAddFlight Load (0.9ms)[0m  [1m[34mSELECT "add_flights".* FROM "add_flights"[0m
+  ↳ app/views/add_flights/index.html.erb:17
+  Rendered add_flights/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 120ms (Views: 116.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/add_flights" for 127.0.0.1 at 2019-03-18 00:56:19 -0600
+Processing by AddFlightsController#index as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/add_flight.rb:4:in `<class:AddFlight>'
+app/models/add_flight.rb:1:in `<main>'
+app/controllers/add_flights_controller.rb:7:in `index'
+Started GET "/add_flights" for 127.0.0.1 at 2019-03-18 00:59:23 -0600
+Processing by AddFlightsController#index as HTML
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/add_flight.rb:6:in `<class:AddFlight>'
+app/models/add_flight.rb:1:in `<main>'
+app/controllers/add_flights_controller.rb:7:in `index'
+Started GET "/add_flights" for 127.0.0.1 at 2019-03-18 01:00:08 -0600
+Processing by AddFlightsController#index as HTML
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/add_flight.rb:6:in `<class:AddFlight>'
+app/models/add_flight.rb:1:in `<main>'
+app/controllers/add_flights_controller.rb:7:in `index'
+Started GET "/add_flights" for 127.0.0.1 at 2019-03-18 01:00:23 -0600
+Processing by AddFlightsController#index as HTML
+  Rendering add_flights/index.html.erb within layouts/application
+  [1m[36mAddFlight Load (1.6ms)[0m  [1m[34mSELECT "add_flights".* FROM "add_flights"[0m
+  ↳ app/views/add_flights/index.html.erb:17
+  Rendered add_flights/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 150ms (Views: 132.7ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/add_flights/new" for 127.0.0.1 at 2019-03-18 01:00:26 -0600
+Processing by AddFlightsController#new as HTML
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (34.4ms)
+  Rendered add_flights/new.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 165ms (Views: 123.2ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/add_flights" for 127.0.0.1 at 2019-03-18 01:02:15 -0600
+Processing by AddFlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"susD2blEwHPE7txWzvJfzuDUmqaJFROFvOFNQV6FAG9M/QbBRXdvx9RJY/VkYo5vO/YB1w7PtTXOMTPmA0WnRw==", "add_flight"=>{"departing"=>"", "arriving"=>"", "departureTime(1i)"=>"2019", "departureTime(2i)"=>"2", "departureTime(3i)"=>"18", "departureTime(4i)"=>"07", "departureTime(5i)"=>"00", "arrivalTime(1i)"=>"2019", "arrivalTime(2i)"=>"3", "arrivalTime(3i)"=>"18", "arrivalTime(4i)"=>"07", "arrivalTime(5i)"=>"00"}, "commit"=>"Create Add flight"}
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (55.4ms)
+  Rendered add_flights/new.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 243ms (Views: 161.1ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/add_flights" for 127.0.0.1 at 2019-03-18 01:02:22 -0600
+Processing by AddFlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s02NAGguRd1DFp7t5TPnLOtjiEO9/it2pgGOSUQh7SxJqaTADFLN//gA5oep+tNxMaaIvPXwfOHimJ8H4itQ8A==", "add_flight"=>{"departing"=>"", "arriving"=>"", "departureTime(1i)"=>"2019", "departureTime(2i)"=>"2", "departureTime(3i)"=>"18", "departureTime(4i)"=>"07", "departureTime(5i)"=>"00", "arrivalTime(1i)"=>"2019", "arrivalTime(2i)"=>"1", "arrivalTime(3i)"=>"18", "arrivalTime(4i)"=>"07", "arrivalTime(5i)"=>"00"}, "commit"=>"Create Add flight"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (37.7ms)
+  Rendered add_flights/new.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 155ms (Views: 127.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/add_flights" for 127.0.0.1 at 2019-03-18 01:04:44 -0600
+Processing by AddFlightsController#index as HTML
+  Rendering add_flights/index.html.erb within layouts/application
+  [1m[36mAddFlight Load (1.1ms)[0m  [1m[34mSELECT "add_flights".* FROM "add_flights"[0m
+  ↳ app/views/add_flights/index.html.erb:17
+  Rendered add_flights/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 118ms (Views: 94.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/add_flights/new" for 127.0.0.1 at 2019-03-18 01:04:47 -0600
+Processing by AddFlightsController#new as HTML
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (31.3ms)
+  Rendered add_flights/new.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 139ms (Views: 104.7ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/add_flights" for 127.0.0.1 at 2019-03-18 01:04:51 -0600
+Processing by AddFlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/pEKZLWF9TpprpBcQYu4IhFXYnpJm83jun6Eblh+17IAhw98SbZajnkJL//rG2mDynX5C85Ba1PIrvrJBb5wmg==", "add_flight"=>{"departing"=>"", "arriving"=>"", "departureTime(1i)"=>"2019", "departureTime(2i)"=>"3", "departureTime(3i)"=>"18", "departureTime(4i)"=>"07", "departureTime(5i)"=>"04", "arrivalTime(1i)"=>"2019", "arrivalTime(2i)"=>"1", "arrivalTime(3i)"=>"18", "arrivalTime(4i)"=>"07", "arrivalTime(5i)"=>"04"}, "commit"=>"Create Add flight"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (36.6ms)
+  Rendered add_flights/new.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 149ms (Views: 128.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/add_flights" for 127.0.0.1 at 2019-03-18 01:05:28 -0600
+Processing by AddFlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hZfvtRYTfWbCU6uGjeCbF31u3ro47b6VcJzmS8ppNR5/c8Z1cm/1RHlF0+zBKa9Kp6veRXDj6QI0BfcFbGOIwg==", "add_flight"=>{"departing"=>"Syracus", "arriving"=>"Denver", "departureTime(1i)"=>"2019", "departureTime(2i)"=>"3", "departureTime(3i)"=>"18", "departureTime(4i)"=>"07", "departureTime(5i)"=>"04", "arrivalTime(1i)"=>"2019", "arrivalTime(2i)"=>"3", "arrivalTime(3i)"=>"19", "arrivalTime(4i)"=>"07", "arrivalTime(5i)"=>"04"}, "commit"=>"Create Add flight"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  [1m[36mAddFlight Create (1.3ms)[0m  [1m[32mINSERT INTO "add_flights" ("departing", "arriving", "departureTime", "arrivalTime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["departing", "Syracus"], ["arriving", "Denver"], ["departureTime", "2019-03-18 07:04:00"], ["arrivalTime", "2019-03-19 07:04:00"], ["created_at", "2019-03-18 07:05:28.348221"], ["updated_at", "2019-03-18 07:05:28.348221"]]
+  ↳ app/controllers/add_flights_controller.rb:30
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+Redirected to http://localhost:3000/add_flights/2
+Completed 302 Found in 75ms (ActiveRecord: 14.6ms)
+
+
+Started GET "/add_flights/2" for 127.0.0.1 at 2019-03-18 01:05:28 -0600
+Processing by AddFlightsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAddFlight Load (0.7ms)[0m  [1m[34mSELECT  "add_flights".* FROM "add_flights" WHERE "add_flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/add_flights_controller.rb:67
+  Rendering add_flights/show.html.erb within layouts/application
+  Rendered add_flights/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 78ms (Views: 68.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/add_flights" for 127.0.0.1 at 2019-03-18 01:05:31 -0600
+Processing by AddFlightsController#index as HTML
+  Rendering add_flights/index.html.erb within layouts/application
+  [1m[36mAddFlight Load (0.6ms)[0m  [1m[34mSELECT "add_flights".* FROM "add_flights"[0m
+  ↳ app/views/add_flights/index.html.erb:17
+  Rendered add_flights/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 91ms (Views: 86.1ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/add_flights/2" for 127.0.0.1 at 2019-03-18 01:05:38 -0600
+Processing by AddFlightsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZE+ikfpWQedwMETLPlQBFUA5rJx6wCsC1G7IwRDWUw2eq4tRnirJxcsmPKFynTVImvysYzLOfJWQ99mPttzu0Q==", "id"=>"2"}
+  [1m[36mAddFlight Load (1.5ms)[0m  [1m[34mSELECT  "add_flights".* FROM "add_flights" WHERE "add_flights"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/add_flights_controller.rb:67
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:57
+  [1m[36mAddFlight Destroy (0.8ms)[0m  [1m[31mDELETE FROM "add_flights" WHERE "add_flights"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/add_flights_controller.rb:57
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:57
+Redirected to http://localhost:3000/add_flights
+Completed 302 Found in 56ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/add_flights" for 127.0.0.1 at 2019-03-18 01:05:38 -0600
+Processing by AddFlightsController#index as HTML
+  Rendering add_flights/index.html.erb within layouts/application
+  [1m[36mAddFlight Load (0.7ms)[0m  [1m[34mSELECT "add_flights".* FROM "add_flights"[0m
+  ↳ app/views/add_flights/index.html.erb:17
+  Rendered add_flights/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 93ms (Views: 88.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/add_flights" for 127.0.0.1 at 2019-03-18 01:15:15 -0600
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gurbe/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by AddFlightsController#index as HTML
+  Rendering add_flights/index.html.erb within layouts/application
+  [1m[36mAddFlight Load (0.9ms)[0m  [1m[34mSELECT "add_flights".* FROM "add_flights"[0m
+  ↳ app/views/add_flights/index.html.erb:17
+  Rendered add_flights/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 934ms (Views: 848.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/add_flights/new" for 127.0.0.1 at 2019-03-18 01:15:20 -0600
+Processing by AddFlightsController#new as HTML
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (62.7ms)
+  Rendered add_flights/new.html.erb within layouts/application (67.9ms)
+Completed 200 OK in 189ms (Views: 154.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/add_flights" for 127.0.0.1 at 2019-03-18 01:15:22 -0600
+Processing by AddFlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZnX9qqLZthFApGAbYwWMBz3NnH+6na6T94QcjgCWpnWYY/iyXuoZpVAD37jJlV2m5u8HDj1HCCOFVGIpXVYBXQ==", "add_flight"=>{"departing"=>"", "arriving"=>"", "departureTime(1i)"=>"2019", "departureTime(2i)"=>"3", "departureTime(3i)"=>"18", "departureTime(4i)"=>"07", "departureTime(5i)"=>"15", "arrivalTime(1i)"=>"2019", "arrivalTime(2i)"=>"3", "arrivalTime(3i)"=>"18", "arrivalTime(4i)"=>"07", "arrivalTime(5i)"=>"15"}, "commit"=>"Create Add flight"}
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (39.8ms)
+  Rendered add_flights/new.html.erb within layouts/application (45.3ms)
+Completed 200 OK in 151ms (Views: 111.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/add_flights" for 127.0.0.1 at 2019-03-18 01:15:30 -0600
+Processing by AddFlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6+CWPGHTDjTTHW4B9KK3XgmUndWa8k7bXmaDQlyJH+MRBL/8Ba+GFmgLFmu4a4MD01GdKtL8GUwa/5IM+oOiPw==", "add_flight"=>{"departing"=>"", "arriving"=>"", "departureTime(1i)"=>"2019", "departureTime(2i)"=>"3", "departureTime(3i)"=>"18", "departureTime(4i)"=>"07", "departureTime(5i)"=>"15", "arrivalTime(1i)"=>"2019", "arrivalTime(2i)"=>"1", "arrivalTime(3i)"=>"18", "arrivalTime(4i)"=>"07", "arrivalTime(5i)"=>"15"}, "commit"=>"Create Add flight"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  [1m[35m (4.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (45.4ms)
+  Rendered add_flights/new.html.erb within layouts/application (60.8ms)
+Completed 200 OK in 185ms (Views: 165.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/add_flights" for 127.0.0.1 at 2019-03-18 01:15:35 -0600
+Processing by AddFlightsController#index as HTML
+  Rendering add_flights/index.html.erb within layouts/application
+  [1m[36mAddFlight Load (0.8ms)[0m  [1m[34mSELECT "add_flights".* FROM "add_flights"[0m
+  ↳ app/views/add_flights/index.html.erb:17
+  Rendered add_flights/index.html.erb within layouts/application (99.8ms)
+Completed 200 OK in 187ms (Views: 183.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/add_flights/new" for 127.0.0.1 at 2019-03-18 01:16:10 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gurbe/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by AddFlightsController#new as HTML
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (51.4ms)
+  Rendered add_flights/new.html.erb within layouts/application (57.8ms)
+Completed 200 OK in 741ms (Views: 620.4ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/add_flights" for 127.0.0.1 at 2019-03-18 01:16:13 -0600
+Processing by AddFlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aCF7LVqw7yBEz9BxmnWulnC/cHyRnV96bl8o9HOKJ6WSxVLtPsxnAv/ZqBvWvJrLqnpwg9mTCO0qxjm61YCaeQ==", "add_flight"=>{"departing"=>"", "arriving"=>"", "departureTime(1i)"=>"2019", "departureTime(2i)"=>"3", "departureTime(3i)"=>"18", "departureTime(4i)"=>"07", "departureTime(5i)"=>"15", "arrivalTime(1i)"=>"2019", "arrivalTime(2i)"=>"1", "arrivalTime(3i)"=>"18", "arrivalTime(4i)"=>"07", "arrivalTime(5i)"=>"15"}, "commit"=>"Create Add flight"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `Can't arrive before you leave!' for #<AddFlight:0x00007f3d500a4e40>):
+  
+app/models/add_flight.rb:12:in `arrivalTime_not_before_departureTime'
+app/controllers/add_flights_controller.rb:30:in `block in create'
+app/controllers/add_flights_controller.rb:29:in `create'
+Started POST "/add_flights" for 127.0.0.1 at 2019-03-18 01:16:26 -0600
+Processing by AddFlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aCF7LVqw7yBEz9BxmnWulnC/cHyRnV96bl8o9HOKJ6WSxVLtPsxnAv/ZqBvWvJrLqnpwg9mTCO0qxjm61YCaeQ==", "add_flight"=>{"departing"=>"", "arriving"=>"", "departureTime(1i)"=>"2019", "departureTime(2i)"=>"3", "departureTime(3i)"=>"18", "departureTime(4i)"=>"07", "departureTime(5i)"=>"15", "arrivalTime(1i)"=>"2019", "arrivalTime(2i)"=>"1", "arrivalTime(3i)"=>"18", "arrivalTime(4i)"=>"07", "arrivalTime(5i)"=>"15"}, "commit"=>"Create Add flight"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/add_flights_controller.rb:30
+  Rendering add_flights/new.html.erb within layouts/application
+  Rendered add_flights/_form.html.erb (34.9ms)
+  Rendered add_flights/new.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 184ms (Views: 122.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/add_flights" for 127.0.0.1 at 2019-03-18 01:16:32 -0600
+Processing by AddFlightsController#index as HTML
+  Rendering add_flights/index.html.erb within layouts/application
+  [1m[36mAddFlight Load (0.7ms)[0m  [1m[34mSELECT "add_flights".* FROM "add_flights"[0m
+  ↳ app/views/add_flights/index.html.erb:17
+  Rendered add_flights/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 85ms (Views: 79.0ms | ActiveRecord: 1.8ms)
+
+

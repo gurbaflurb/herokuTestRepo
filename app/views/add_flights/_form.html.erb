@@ -1,4 +1,3 @@
-class: "input"
 <%= form_with(model: add_flight, local: true) do |form| %>
   <% if add_flight.errors.any? %>
     <div id="error_explanation">
@@ -24,7 +23,7 @@ class: "input"
 
   <div class="field">
     <%= form.label :departureTime %>
-    <%= form.datetime_select :departureTime %>
+    <%= form.datetime_select :departureTime%>
   </div>
 
   <div class="field">
